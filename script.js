@@ -6,6 +6,10 @@ const bands = [
   'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'
 ];
 
+function stripArticle(name) {
+  return name.replace(/^(a |an |the )/i, '').trim();
+}
+
 const sortedBands = bands.slice().sort((a, b) =>
   stripArticle(a).localeCompare(stripArticle(b))
 );
